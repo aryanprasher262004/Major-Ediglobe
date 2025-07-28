@@ -2,3 +2,45 @@
 
 
 @tailwind utilities;
+
+:root{
+    --p: #132a13;
+    --s: #336e2cfa;
+    --heading: #4f772d;
+    --text: #90a955c5;
+    --h: #ecf39e98;
+    --a:#143601;
+    --extra: #56a31a8b;
+}
+
+
+
+
+.left{
+ scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--s) transparent;
+}
+
+
+@font-face {
+    font-family: "head";
+    src: url(/fonts/gastro.otf) format('opentype');
+   
+}
+@font-face {
+    font-family: "times";
+    src: url(/fonts/times.ttf) format('truetype');
+   
+}
+@font-face {
+    font-family: 'subhead';
+    src: url(/fonts/Rosaline.otf) format('opentype');
+   
+}
+@font-face {
+    font-family: 'demo';
+    src: url(/fonts/demo.otf) format('opentype');
+   
+}
+
