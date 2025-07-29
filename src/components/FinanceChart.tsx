@@ -77,7 +77,7 @@ const data = [
 
 const FinanceChart = () => {
   return (
-    <div className='h-full bg-[var(--extra)] rounded-lg p-3'>
+    <div className='h-full bg-[var(--h)] border-1 border-t-5 rounded-lg p-3'>
          <div className='flex items-center justify-between   rounded-t-lg'>
                     <span className='font-semibold text-xl text-[var(--a)]'>Finance</span>
                     <Image src="/more.png"  alt='' height={20} width={20} className='' />
@@ -89,15 +89,16 @@ const FinanceChart = () => {
         width={400}
         height={400}
         data={data}
+        
      
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
+        <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill:'var(--p)'}}/>
+          <YAxis axisLine={false} tickLine={false} tick={{fill:'var(--p)'}}/>
         <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="expense" stroke="#336e2cfa" />
-        <Line type="monotone" dataKey="income" stroke="#56a31a8b"  activeDot={{ r: 8 }}/>
+        <Legend  align='center' verticalAlign='top' wrapperStyle={{paddingBottom:"15px", }} />
+        <Line type="monotone" dataKey="expense" stroke="var(--s)"  strokeWidth={5} />
+        <Line type="monotone" dataKey="income" stroke="var(--a)" strokeWidth={5} activeDot={{ r: 8 }}/>
 
       </LineChart>
     </ResponsiveContainer>

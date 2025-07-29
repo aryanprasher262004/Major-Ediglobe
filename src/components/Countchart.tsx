@@ -1,5 +1,5 @@
 "use client";  // this is a client component
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar,  ResponsiveContainer } from 'recharts';
 import Image from 'next/image';
 
 const data = [
@@ -7,20 +7,20 @@ const data = [
         name: 'Total',
         count: 82,
    
-        fill: '#90a955c5',
+        fill: 'var(--text)',
       },
     {
       name: 'Girls',
       count: 32,
  
-      fill: '#143601',
+      fill: 'var(--a)',
     },
 
     {
       name: 'Boys',
       count: 50,
    
-      fill: '#336e2cfa',
+      fill: 'var(--s)',
     },
    
   ];
@@ -28,7 +28,7 @@ const data = [
 
 const Countchart = () => {
   return (
-    <div className='bg-[var(--extra)] rounded-lg h-full p-3 relative '>
+    <div className=' bg-[var(--heading)]  border-t-5 rounded-lg h-full p-3 relative '>
         {/* top  */}
         <div className='flex items-center justify-between   rounded-t-lg'>
             <span className='font-semibold text-xl text-[var(--a)]'>Students</span>

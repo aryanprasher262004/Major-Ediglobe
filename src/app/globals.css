@@ -4,22 +4,143 @@
 @tailwind utilities;
 
 :root{
-    --p: #132a13;
-    --s: #336e2cfa;
-    --heading: #4f772d;
-    --text: #90a955c5;
-    --h: #ecf39e98;
-    --a:#143601;
-    --extra: #56a31a8b;
+    --p: #0d1b2a;
+    --s: #415a77;
+    --heading: #88c3cf;
+    --text: #438894 ;
+    --h: #d4d5cf;
+    --a:#1b263b;
+    --extra: #076b8d;
+}
+
+body{
+    overflow: hidden;
 }
 
 
+.react-calendar{
+    width: 100% !important;
+    padding-bottom: 2px !important;
+    max-height: 400px !important; 
+    height: 100% !important;   
+    background-color: var(--h) !important;
+    border: none !important;
+    border-radius: 10px !important;
 
+    
+}
+.react-calendar__navigation__label__labelText{
+    color: var(--p);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.react-calendar__tile--active{
+    background-color: var(--a) !important;
+    color: var(--h) !important;
+    border-radius: 10px !important;
 
+}
+
+.react-calendar__tile--now{
+    background-color: var(--extra) !important;
+    color: var(--h) !important;
+    border-radius: 10px !important;
+}
 .left{
  scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--s) transparent;
+}
+.annoucement{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--h) transparent;
+}
+.events{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text) transparent;
+}
+
+.rbc-btn-group:first-child {
+    display: none !important;
+}
+
+.rbc-toolbar-label{
+    text-align: right !important;
+    padding: 0 10px !important;
+}
+.rbc-btn-group:last-child {
+ 
+    font-size: 13px !important;
+}
+
+
+.rbc-btn-group:last-child button {
+    background-color: var(--heading) !important;
+    color: var(--extra) !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--extra) !important;
+    margin-left: 5px !important;
+    font-weight: 600 !important;
+
+    
+}
+.rcb-time-view{
+    background-color: var(--h) !important;
+    color: var(--text) !important;
+    border-radius: 10px !important;
+ 
+}
+.rbc-time-gutter.rbc-time-column {
+    font-size: 13px !important;
+    padding: 4px  !important;
+}
+.rbc-event{
+    font-size: smaller;
+}
+.rbc-event:nth-child(1) {
+    background-color: var(--heading) !important;
+    color: white !important;    
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
+}
+.rbc-event:nth-child(2) {
+    background-color: var(--text) !important;
+    color: white !important;    
+    border-radius: 10px !important;     
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
+}
+.rbc-event:nth-child(3) {
+    background-color: var(--s) !important;
+    color: white !important;            
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
+}
+.rbc-event:nth-child(4) {
+    background-color: var(--p) !important;
+    color: white !important;           
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
+}
+
+.rbc-event:nth-child(5) {
+    background-color: var(--text) !important;
+    color: white !important;             
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
+}
+.rbc-event:nth-child(6) {
+    background-color: var(--heading) !important;
+    color: white !important;         
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    font-weight: 600 !important;
 }
 
 

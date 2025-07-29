@@ -7,7 +7,7 @@ const Usercards = ({type}:{type:string}) => {
         <Image src="/more.png" alt="" height={20} width={20}className="cursor-pointer " ></Image>
         </div>
         <h1 className="text-2xl text-white font-semibold shadow-2xl ">2,254</h1>
-        <h2 className="text-gray-700">{type}s</h2>   
+        <h2 className="text-white">{type}s</h2>   
      </div>
      
   )

@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar,  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Image from 'next/image';
 const data = [
   {
@@ -38,7 +38,7 @@ const data = [
 
 const AttendanceChart = () => {
   return (
-    <div className='bg-[var(--extra)] rounded-lg h-full p-3 '>
+    <div className='bg-[var(--heading)]  border-t-5 rounded-lg h-full p-3 '>
         <div className='flex items-center justify-between '>
             <span className='font-semibold text-xl text-[var(--a)]'>Attendance</span>
             <Image src="/more.png"  alt='' height={20} width={20} className='' />
@@ -55,12 +55,12 @@ const AttendanceChart = () => {
      
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill:'#132a13'}} />
-          <YAxis  axisLine={false}  tickLine={false} tick={{fill:'#132a13'}} />
+          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill:'var(--p)'}} />
+          <YAxis  axisLine={false}  tickLine={false} tick={{fill:'var(--p)'}} />
           <Tooltip />
             <Legend  align='left' verticalAlign='top' wrapperStyle={{paddingBottom:"15px", }} />
-          <Bar dataKey="present" fill="#336e2cfa"  legendType='circle' radius={[10,10,0,0]}  />
-          <Bar dataKey="absent" fill="#143601"  legendType='circle' radius={[10,10,0,0]} />
+          <Bar dataKey="present" fill="var(--s)"  legendType='circle' radius={[10,10,0,0]}  />
+          <Bar dataKey="absent" fill="var(--a)"  legendType='circle' radius={[10,10,0,0]} />
         </BarChart>
       </ResponsiveContainer>
                 
