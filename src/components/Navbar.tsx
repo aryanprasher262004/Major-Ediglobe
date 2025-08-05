@@ -7,7 +7,7 @@ const Navbar = () => {
 
         <div className="inputbox hidden md:flex items-center relative justify-between gap-2 ">
             <Image src="/search.png" alt="Search Icon" width={20} height={20} className=" absolute right-2 top-[6px] drop-shadow-white z-88 " />
-            <input type="text" className="rounded-full border px-3 p-1 bg-[var(--h)] w-[300px]  hover:scale-102 text-black ring-[1px] outline-none  ring-gray-400 transition duration-2 00 ease-in-out " placeholder="Search..." />
+            <input type="text" className="rounded-full border px-3 p-1 bg-[var(--h)] w-[300px]  hover:scale-102 text-black ring-[1px] outline-none  ring-gray-400 transition duration-200 ease-in-out " placeholder="Search..." />
         </div>
 
         <div className="icons flex items-center justify-end w-full gap-4">

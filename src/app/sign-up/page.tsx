@@ -5,11 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
-    role: "admin"
+    confirmPassword: "",
+    role: "student"
   });
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -18,10 +21,10 @@ const SignInPage = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate login process
+    // Simulate registration process
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/");
+      router.push("/sign-in");
     }, 1500);
   };
 
@@ -51,21 +54,21 @@ const SignInPage = () => {
           <h2 className="text-4xl font-bold text-[var(--p)] mb-2" style={{fontFamily:'head'}}>
             UniLearn
           </h2>
-          <p className="text-[var(--text)] text-lg">Welcome back to your school</p>
+          <p className="text-[var(--text)] text-lg">Join our educational community</p>
         </div>
 
-        {/* Login Form */}
+        {/* Sign Up Form */}
         <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6 hover:shadow-3xl transition-shadow duration-300">
           <div className="text-center">
-            <h3 className="text-2xl font-semibold text-[var(--p)] mb-2">Sign In</h3>
-            <p className="text-gray-600">Enter your credentials to access your account</p>
+            <h3 className="text-2xl font-semibold text-[var(--p)] mb-2">Create Account</h3>
+            <p className="text-gray-600">Fill in your details to get started</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Role Selection */}
             <div>
               <label htmlFor="role" className="block text-sm font-medium text-[var(--p)] mb-2">
-                Login As
+                Register As
               </label>
               <select
                 id="role"
@@ -74,11 +77,44 @@ const SignInPage = () => {
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--heading)] focus:border-transparent transition-all duration-300 bg-white text-[var(--p)]"
               >
-                <option value="admin">Administrator</option>
-                <option value="teacher">Teacher</option>
                 <option value="student">Student</option>
                 <option value="parent">Parent</option>
+                <option value="teacher">Teacher</option>
               </select>
+            </div>
+
+            {/* Name Fields */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="firstName" className="block text-sm font-medium text-[var(--p)] mb-2">
+                  First Name
+                </label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  required
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--heading)] focus:border-transparent transition-all duration-300"
+                  placeholder="First name"
+                />
+              </div>
+              <div>
+                <label htmlFor="lastName" className="block text-sm font-medium text-[var(--p)] mb-2">
+                  Last Name
+                </label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  required
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--heading)] focus:border-transparent transition-all duration-300"
+                  placeholder="Last name"
+                />
+              </div>
             </div>
 
             {/* Email Input */}
@@ -111,28 +147,46 @@ const SignInPage = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--heading)] focus:border-transparent transition-all duration-300"
-                placeholder="Enter your password"
+                placeholder="Create a password"
               />
             </div>
 
-            {/* Remember Me and Forgot Password */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-[var(--heading)] focus:ring-[var(--heading)] border-gray-300 rounded"
-                />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                  Remember me
-                </label>
-              </div>
-              <div className="text-sm">
-                <Link href="/forgot-password" className="font-medium text-[var(--heading)] hover:text-[var(--extra)] transition-colors duration-300">
-                  Forgot password?
+            {/* Confirm Password Input */}
+            <div>
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-[var(--p)] mb-2">
+                Confirm Password
+              </label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                required
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--heading)] focus:border-transparent transition-all duration-300"
+                placeholder="Confirm your password"
+              />
+            </div>
+
+            {/* Terms and Conditions */}
+            <div className="flex items-center">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                required
+                className="h-4 w-4 text-[var(--heading)] focus:ring-[var(--heading)] border-gray-300 rounded"
+              />
+              <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
+                I agree to the{" "}
+                <Link href="/terms" className="font-medium text-[var(--heading)] hover:text-[var(--extra)] transition-colors duration-300">
+                  Terms and Conditions
                 </Link>
-              </div>
+                {" "}and{" "}
+                <Link href="/privacy" className="font-medium text-[var(--heading)] hover:text-[var(--extra)] transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+              </label>
             </div>
 
             {/* Submit Button */}
@@ -144,10 +198,10 @@ const SignInPage = () => {
               {isLoading ? (
                 <div className="flex items-center">
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Signing in...
+                  Creating account...
                 </div>
               ) : (
-                "Sign In"
+                "Create Account"
               )}
             </button>
           </form>
@@ -158,11 +212,11 @@ const SignInPage = () => {
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Or continue with</span>
+              <span className="px-2 bg-white text-gray-500">Or sign up with</span>
             </div>
           </div>
 
-          {/* Social Login Buttons */}
+          {/* Social Sign Up Buttons */}
           <div className="grid grid-cols-2 gap-3">
             <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-300 transform hover:scale-105">
               <Image src="/google.png" alt="Google" width={20} height={20} className="mr-2" />
@@ -174,12 +228,12 @@ const SignInPage = () => {
             </button>
           </div>
 
-          {/* Sign Up Link */}
+          {/* Sign In Link */}
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{" "}
-              <Link href="/sign-up" className="font-medium text-[var(--heading)] hover:text-[var(--extra)] transition-colors duration-300">
-                Sign up here
+              Already have an account?{" "}
+              <Link href="/sign-in" className="font-medium text-[var(--heading)] hover:text-[var(--extra)] transition-colors duration-300">
+                Sign in here
               </Link>
             </p>
           </div>
@@ -194,4 +248,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage; 

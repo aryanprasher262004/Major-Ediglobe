@@ -14,7 +14,7 @@ export default function DashboardLayout({
 }) {
     return (
       
-        <div className="h-screen flex">
+        <div className="h-screen flex ">
           {/* left box */}
           <div className=" left w-[14%] md:w-[8%] lg:w-[16%] bg-[var(--p)]  overflow-y-scroll  " >
             <Link href="/" className="flex flex-col items-center justify-center gap-2  p-3" >
@@ -31,7 +31,7 @@ export default function DashboardLayout({
             <Menu />
           </div>
           {/* right box */}
-            <div className="w-[86%] md:w-[92%] lg:w-[86%] bg-white  ">
+            <div className="w-[86%] md:w-[92%] lg:w-[86%] bg-[var(--bg)]">
             <Navbar/>
             <div className="flex flex-col  h-[calc(100%-80px)] overflow-y-auto w-full "> { children }</div>
            
